@@ -228,17 +228,24 @@ int logic() {
 }
 
 // main function
-#define SLEEP_TIME 1
 int main() {
   enableRawMode();
   // initial settings
   setup();
+
+  float SLEEP_TIME;
+  SLEEP_TIME = 10;
 
   // game loop
   while (!gameover) {
     draw();
     input();
     logic();
-    usleep(SLEEP_TIME * 1e6); // sleep function from unistd.h
+    SLEEP_TIME -= score;
+    if (SLEEP_TIME == 0) {
+      break;
+      printf("game over you win completed the game\n");
+    }
+    usleep(SLEEP_TIME * 1e5); // sleep function from unistd.h
   }
 }
