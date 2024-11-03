@@ -12,6 +12,8 @@ This is a simple, terminal-based Snake Game written in C. It uses low-level term
 
 ### Prerequisites
 
+Audio Library: openal
+
 To build and run this project, you’ll need:
 - **C Compiler**: Tested with `clang` and `gcc`.
 - **Linux/Unix Terminal**: The game uses system calls (`select()` and `termios`) that are standard on Unix-like systems.
